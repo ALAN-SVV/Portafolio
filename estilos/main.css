@@ -1,0 +1,91 @@
+html {
+    font-size: 16px; /*pixeles para el tamañode las letras*/
+}
+
+/*Voy a usar mediasquery para hacer adaptable 
+la letra a un dispositivo diferente*/
+@media screen and(max-width:400px) {
+    html {
+        font-size: 9.411764705882353px; /*comando para que sea adaptable a una pantalla de 9 pixeles*/
+    }
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background: burlywood;/*color del fondo*/
+    font-family: "Open-Sans", sans-serif;/*tipo de letra*/
+    font-size: 1.7rem;/*espacio de lineas*/
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1.882; /*se multiplica por el rem anterior*/
+    color: green; /*color de viñetas*/
+    margin: 0; /*margen  exterior*/
+    padding: 12px;/*margen interior*/
+}
+
+/*Estilos a los links*/
+a {
+    color: purple;/*color de los links*/
+    transition: all 0.3s ease-in-out;/*tiempo que dura el color en el link*/
+}
+
+a:hover,/*establecer un segundo plano a un elemeto*/
+a:focus,/*brillo*/
+a:active {/*activación*/
+    color:red;/*color que se combia al poner el mause encima*/
+
+}
+
+a:hover,
+a:active {
+    outline: 0;
+}
+
+/*tipografía*/
+h1,/*eleccion de los diferentes titulos que estan con la etiqueta h*/
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    font-family: "Frank Ruh1 libre", serif;
+    font-weight: 500;/*para agrandar las letras*/
+    font-style: normal;
+    color: brown;/*color de letra*/
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4 {
+    margin-top: 6rem;/* para hacer un intelineado*/
+    margin-bottom: 16rem;/* separar los contenedores de ls información*/
+}
+
+@media screen and (max-width:600px) {
+
+    h1,
+    .h1,
+    h2,
+    .h2,
+    h3,
+    .h3,
+    h4,
+    .h4 {
+        margin-top: 6rem;
+    }
+}
