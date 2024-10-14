@@ -1,12 +1,14 @@
 html {
-    font-size: 16px; /*pixeles para el tamañode las letras*/
+    font-size: 16px;
+    /*pixeles para el tamañode las letras*/
 }
 
 /*Voy a usar mediasquery para hacer adaptable 
 la letra a un dispositivo diferente*/
 @media screen and(max-width:400px) {
     html {
-        font-size: 9.411764705882353px; /*comando para que sea adaptable a una pantalla de 9 pixeles*/
+        font-size: 9.411764705882353px;
+        /*comando para que sea adaptable a una pantalla de 9 pixeles*/
     }
 }
 
@@ -16,27 +18,40 @@ body {
 }
 
 body {
-    background: burlywood;/*color del fondo*/
-    font-family: "Open-Sans", sans-serif;/*tipo de letra*/
-    font-size: 1.7rem;/*espacio de lineas*/
+    background: burlywood;
+    /*color del fondo*/
+    font-family: "Open-Sans", sans-serif;
+    /*tipo de letra*/
+    font-size: 1.7rem;
+    /*espacio de lineas*/
     font-style: normal;
     font-weight: normal;
-    line-height: 1.882; /*se multiplica por el rem anterior*/
-    color: green; /*color de viñetas*/
-    margin: 0; /*margen  exterior*/
-    padding: 12px;/*margen interior*/
+    line-height: 1.882;
+    /*se multiplica por el rem anterior*/
+    color: green;
+    /*color de viñetas*/
+    margin: 0;
+    /*margen  exterior*/
+    padding: 12px;
+    /*margen interior*/
 }
 
 /*Estilos a los links*/
 a {
-    color: purple;/*color de los links*/
-    transition: all 0.3s ease-in-out;/*tiempo que dura el color en el link*/
+    color: purple;
+    /*color de los links*/
+    transition: all 0.3s ease-in-out;
+    /*tiempo que dura el color en el link*/
 }
 
-a:hover,/*establecer un segundo plano a un elemeto*/
-a:focus,/*brillo*/
-a:active {/*activación*/
-    color:red;/*color que se combia al poner el mause encima*/
+a:hover,
+/*establecer un segundo plano a un elemeto*/
+a:focus,
+/*brillo*/
+a:active {
+    /*activación*/
+    color: red;
+    /*color que se combia al poner el mause encima*/
 
 }
 
@@ -46,7 +61,8 @@ a:active {
 }
 
 /*tipografía*/
-h1,/*eleccion de los diferentes titulos que estan con la etiqueta h*/
+h1,
+/*eleccion de los diferentes titulos que estan con la etiqueta h*/
 h2,
 h3,
 h4,
@@ -59,9 +75,11 @@ h6,
 .h5,
 .h6 {
     font-family: "Frank Ruh1 libre", serif;
-    font-weight: 500;/*para agrandar las letras*/
+    font-weight: 500;
+    /*para agrandar las letras*/
     font-style: normal;
-    color: brown;/*color de letra*/
+    color: brown;
+    /*color de letra*/
 }
 
 h1,
@@ -72,8 +90,10 @@ h3,
 .h3,
 h4,
 .h4 {
-    margin-top: 6rem;/* para hacer un intelineado*/
-    margin-bottom: 16rem;/* separar los contenedores de ls información*/
+    margin-top: 6rem;
+    /* para hacer un intelineado*/
+    margin-bottom: 16rem;
+    /* separar los contenedores de ls información*/
 }
 
 @media screen and (max-width:600px) {
@@ -88,4 +108,95 @@ h4,
     .h4 {
         margin-top: 6rem;
     }
+
+    /*margen hacia arriba*/
+}
+
+h5,
+.h5,
+h6,
+.h6 {
+    margin-top: 4.8rem;
+    margin-bottom: 1.2rem;
+}
+
+/*Este comando es para modificar los espacios de las palabras con h5 y h6*/
+
+/*Estilos del header */
+.s-header {
+    position: absolute;
+    top: 2rem;
+    left: 0px;
+    width: 100%;
+    border: 1px solid red;
+    height: 78px;
+    text-align: center;
+    /*ponemos centrado los apartados del header*/
+}
+
+/*En esta parte separamos los header */
+.s-header.sticky {
+    background: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+/*Aqui empezamos  a modificar la aprte del logo */
+.header-log {
+    display: inline-block;
+    /*tranformamos la lineas a bloques*/
+    margin: 6px 0 0 0;
+    position: absolute;
+    /*tipo de posición*/
+    top: 50%;
+    /*el % sirve para que funcione en diferentes tipos de pantalla*/
+    left: 40px;
+}
+
+.header-log a {
+    /*comenzamos  a modificar las etiquetas a*/
+    display: block;
+    /*lo ponemos como bloque*/
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: none;
+    transition: all .3s;
+    /* le pones una correspodencia de 3 segundos para los links*/
+}
+
+.header-log img {
+    /*Ponemos las imagenes en el lugar donde queramos*/
+    width: 132px;
+    height: 36px;
+    margin: 0;
+}
+
+.header-nav-wrap {
+    /*comenzamos a utilizar la clase para lo iconos*/
+    display: inline-block;
+
+}
+
+.header-nav-wrap ul {
+    /*modificamos de la misma manera la etiqueta de la lista desordenada*/
+    display: inline-block;
+    list-style: none;
+    margin-left: 0;
+    margin-top: 18px;
+
+}
+
+.header-nav-wrap li {
+    /*Tranformamos los link de linea en un bloque*/
+    display: inline-block;
+    padding-left: 0;
+}
+
+.header-nav-wrap li a {
+    /*Ponemos los diferente pixeles para que los iconos 
+    se ubiquen al derecho de la página*/
+    display: block;
+    line-height: calc(78px - (78px*2));
 }
