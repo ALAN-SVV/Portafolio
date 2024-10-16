@@ -270,3 +270,804 @@ h6,
     /*Llamamos a las clases asignadas*/
     color: rgba(255, 255, 255, 0.7);
 }
+/*----------------------------------------------------------------------------------------
+* # menu trigger
+*-----------------------------------------------------------------------------------------*/
+.header-menu-toggle {/*Le decimos al programa que busque una clase en el index para modificar 
+    su color, pixeles, posición,interlineado y tipografia*/
+    display: none;
+    height: 42px;
+    width: 42px;
+    line-height: 42px;
+    font-family: "Lora", serif;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    color: rgba(255, 255, 255, 0.5);
+    transition: all .3s;
+    position: absolute;
+    right: 32px;
+    top: 18px;
+}
+.header-menu-toggle:hover,
+.header-menu-toggle:focus {/*Creamos un hover y focus y ponemos un color*/
+    color: #ffffff;
+}
+
+.header-menu-toggle span {/*Realizamos otra clase en la cual buscara el span del index y los 
+    tranformaremos en un bloque para 
+    modificar, su color transición, posición, piexeles margen y top coon un % que nos ayudaba 
+    a que nuestra información se puede ver en culaquier dispositivo*/
+    display: block;
+    width: 24px;
+    height: 2px;
+    margin-top: -1px;
+    background-color: #ffffff;
+    transition: all .5s;
+    font: 0/0 a;
+    text-shadow: none;
+    color: transparent;
+    position: absolute;
+    top: 50%;
+    left: 9px;
+    right: auto;
+    bottom: auto;
+}
+
+.header-menu-toggle span::before,
+.header-menu-toggle span::after {/*Elaboramos una clase para buscar el span y 
+    adjuntamos el before y after para modificar las posición y pixeles*/
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: inherit;
+    position: absolute;
+    left: 0;
+    transition: all .5s;
+}
+
+.header-menu-toggle span::before {/*ponemos -9 pixeles para acomodar las clase*/
+    top: -9px;
+}
+
+.header-menu-toggle span::after {/*ponemos -9 pixeles para acomodar las clase*/
+    bottom: -9px;
+}
+
+.header-menu-toggle.is-clicked span {/*Le decimos que busque una clase y ponemos una transición */
+    background-color: rgba(255, 255, 255, 0);
+    transition: all .1s;
+}
+
+.header-menu-toggle.is-clicked span::before,
+.header-menu-toggle.is-clicked span::after {/*Ponemos una clase y acotamos un background*/
+    background-color: white;
+}
+
+.header-menu-toggle.is-clicked span::before {/*hacemos que bsuque la clase y aumentamos un top 
+    y un tramsform que se usa par almacenar posición*/
+    top: 0;
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+}
+
+.header-menu-toggle.is-clicked span::after {/*Agregamos un bottom junto con una clase*/
+    bottom: 0;
+    -webkit-transform: rotate(225deg);
+    transform: rotate(225deg);
+}
+
+/*-----------------------------------------------------------------
+* responsive
+* header
+--------------------------------------------------------------------*/
+@media screen and (max-width:1200px) {/*agregamos un media para conectar
+     las librerias y definimos los pixeles*/
+    .header-main-nav {
+        font-size: 12px;
+    }
+
+    .header-main-nav li {
+        margin: 0 1.4rem;
+    }
+
+}
+
+@media screen and (max-width:1000px) {/*Agregamos de la misma manera un clase, junto 
+    con margen y un display*/
+    .s-header {
+        text-align: right;
+    }
+
+    .header-nav-wrap {
+        margin-right: 36px;
+    }
+
+    .header-nav-wrap .header-social {
+        display: none;
+    }
+}
+
+@media screen and (max-width:800px) { /*Incluimos un background y una posición*/
+    .s-header {
+        background-color: #050505;
+        position: fixed;
+        top: 0;
+    }
+
+    .header-logo img {/*Agregamos pixeles*/
+        width: 128px;
+        height: 30px;
+    }
+
+    .header-nav-wrap {/*Agregamos una nueva clase junto con color y piexeles*/
+        display: none;
+        text-align: left;
+        height: auto;
+        width: 100%;
+        background-color: #050505;
+        padding: 120px 44px 64px;
+
+    }
+
+    .header-nav-wrap .header-main-nav {/*Modificamos el header con el rem y el border top*/
+        display: block;
+        padding-left: 0;
+        height: auto;
+        margin: 0 0 4rem 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .header-nav-wrap .header-main-nav li {/*Cmbiamos las etiquetas de li y las modificamos con el display
+        margin y padding*/
+        display: block;
+        margin: 0;
+        padding: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .header-nav-wrap .header-main-nav li a {/*Dejamos que el programa buscque la etiqueta a y 
+        movemos el padding y line-height */
+        padding: 18px 0;
+        line-height: 20px;
+    }
+
+    .header-nav-wrap .header-social {/*Posición y display del header social*/
+        display: block;
+        position: static;
+
+    }
+
+    .header-nav-wrap .header-social li {/*Movemos el interlineado*/
+        font-size: 1.8rem;
+        margin-right: 1.6rem;
+    }
+
+    .header-nav-wrap .header-social li a {/*Adjuntamos pixeles en la clase*/
+        line-height: 36px;
+    }
+
+    .header-menu-toggle {/*Lo convertimos en bloque*/
+        display: block;
+    }
+
+}
+
+@media screen and (max-width:600px) {/*Enalazamos bibliotecas*/
+    .header-logo {
+        left: 35px;
+    }
+
+}
+
+/*--------------------------------------------------------------------------------------------
+  * hacer que el menu sea visible en una pantalla larga
+  ---------------------------------------------------------------------------------------------*/
+@media only screen and (min-width:801px) {/*Hacemos que se conecten las librerias*/
+    .header-nav-wrap {
+        display: block !important;
+    }
+}
+
+/* ===================================================================
+ * # intro 
+ *
+ * ------------------------------------------------------------------- */
+.s-intro {/*Modificamos la intro con diferentes medidas y color de fondo*/
+    width: 100%;
+    height: 100vh;
+    min-height: 792px;
+    background-color: #050505;
+}
+
+.intro-content {/*vamos a cambiar el contenido jugando con los pixeles y centrando la información*/
+    height: 100%;
+    max-width: 1140px;
+    padding-top: 20vh;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: relative;
+}
+
+.intro-pic {/*Agregamos una imagen y cambiamos el fondo junto con la posición*/
+    background-color: #02182c;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-image: url(../img/hero-pic.jpg);
+    background-size: cover;
+    position: absolute;
+    top: 20%;
+    right: 0;
+    bottom: 0;
+    left: 50%;
+}
+
+.intro-pic::before {/*Llamamos a una clase y jugamos con la posición, opasidad y  color*/
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    opacity: .2;
+}
+
+.intro-grid {/*Agregamos otra imagen y la modificamos*/
+    background-image: url(../img/pattern-dot-grid.svg);
+    background-size: 24px 24px;
+    opacity: .15;
+    position: absolute;
+    top: 30%;
+    right: 0;
+    bottom: 0;
+    left: 30%;
+}
+
+.intro-text {/*dentro de esta clase ponemos una posición estatica y u z-index*/
+    -webkit-transform: translate3d(0, -3.6rem, 0);
+    transform: translate3d(0, -3.6rem, 0);
+    position: static;
+    z-index: 1;
+}
+
+.intro-text h3 {/*Cambiamos la tipografia de la etiqueta h3 y su color*/
+    font-family: "Roboto", sans-serif;
+    font-size: 2.4rem;
+    font-weight: 500;
+    line-height: 1.333;
+    color: #cf1767;
+    margin-top: 0;
+}
+
+.intro-text h1 {/*De la etiqueta h1 cambiamos el interlineado y color*/
+    font-size: 7.8rem;
+    font-weight: 500;
+    line-height: 1.179;
+    color: #ffffff;
+    margin-top: 0;
+}
+
+.intro-scroll {/*Cambiamos la tipografia. posición, interlineado   y su color*/
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 2;
+    text-transform: uppercase;
+    letter-spacing: .3rem;
+    position: absolute;
+    bottom: 8rem;
+    left: 24px;
+    z-index: 1;
+}
+
+.intro-scroll a {/*Agregamos un display y un padding*/
+    display: inline-block;
+    color: rgba(255, 255, 255, 0.3);
+    position: relative;
+    padding-right: 8.8rem;
+}
+
+.intro-scroll a::after {/*ponemos a buscar una clase para jugar con el diseño de los pixeles la posición 
+    y el color*/
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    height: 1px;
+    width: 72px;
+    background-color: #cf1767;
+}
+
+/* ------------------------------------------------------------------- 
+ * responsive:
+ * intro
+ * ------------------------------------------------------------------- */
+@media screen and (max-width:1400px) {/*Llamamos a una libreria y hacemos un interlineado*/
+    .intro-text h3 {
+        font-size: 2.2rem;
+    }
+
+    .intro-text h1 {
+        font-size: 7.2rem;
+    }
+
+}
+
+@media screen and (max-width:1200px) {/*Adjuntamos una media y llamamos a las clases para mover su
+     font y max*/
+    .intro-content {
+        max-width: 1000px;
+    }
+
+    .intro-text h3 {
+        font-size: 2rem;
+    }
+
+    .intro-text h1 {
+        font-size: 7rem;
+    }
+
+}
+
+@media screen and (max-width:1024px) {/*Realizamos otro media para los pixeles e interlineado*/
+    .s-intro {
+        max-height: 800px;
+    }
+
+    .intro-text h1 {
+        font-size: 6.2rem;
+    }
+
+}
+
+@media screen and (max-width:900px) {/*Creamos una clase para mover el display y font size*/
+    .intro-text h1 {
+        font-size: 6rem;
+    }
+
+    .intro-text br {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width:800px) {/*De este apartado modificamos el gri, before, pic,
+     content y eqtiquetas de palabras*/
+    .intro-content {
+        width: 88%;
+        padding-top: 8rem;
+    }
+
+    .intro-pic {
+        top: 12%;
+        left: 40%;
+    }
+
+    .intro-pic::before {
+        opacity: .4;
+    }
+
+    .intro-grid {
+        top: 20%;
+        opacity: .1;
+    }
+
+    .intro-text h3 {
+        font-size: 1.8rem;
+    }
+
+    .intro-text h1 {
+        font-size: 5.6rem;
+    }
+
+}
+
+@media screen and (max-width:700px) {/*Nombramos la clase para mover el interlineado y poner los medidas en %*/
+    .intro-text h1 {
+        font-size: 5rem;
+    }
+
+    .intro-pic {
+        left: 30%;
+    }
+
+    .intro-grid {
+        left: 15%;
+    }
+
+}
+
+@media screen and (max-width:600px) {/*Creamos una media y llamamos la clase and pata modificar 
+    los left, junto con el interlineado y transform*/
+    .s-intro {
+        max-height: none;
+    }
+
+    .intro-content {
+        width: auto;
+    }
+
+    .intro-pic {
+        left: 20%;
+    }
+
+    .intro-grid {
+        left: 10%;
+    }
+
+    .intro-text {
+        -webkit-transform: translate3d(0, -4.8rem, 0);
+        transform: translate3d(0, -4.8rem, 0);
+    }
+
+    .intro-text h1 {
+        font-size: 4.8rem;
+    }
+
+    .intro-scroll {
+        font-size: 1.1rem;
+        left: 30px;
+    }
+
+}
+
+@media screen and (max-width:400px) {/*Modificamos el rem*/
+    .s-intro {
+        min-height: 656px;
+    }
+
+    .intro-text h1 {
+        font-size: 4.5rem;
+    }
+
+}
+
+@media screen and (max-width:350px) {
+    .intro-text h1 {
+        font-size: 4.2rem;
+    }
+
+}
+
+/* ===================================================================
+ * # about
+ *
+ * ------------------------------------------------------------------- */
+.s-about { /*En estas clases movemos los bottom y los padding con pixeles y rem, para luego cambiar el color*/
+    padding-top: 19.2rem;
+    padding-bottom: 16.8rem;
+    background-color: #ffffff;
+}
+
+.s-about .row {
+    max-width: 1140px;
+}
+
+.s-about>[class*="about-"] {
+    margin-bottom: 15.2rem;
+}
+
+.s-about>[class*="about-"]:last-child {
+    margin-bottom: 0;
+}
+
+.about-me__text {
+    -webkit-columns: 2 360px;
+    -moz-columns: 2 360px;
+    columns: 2 360px;
+    column-gap: 64px;
+}
+
+.about-me__buttons {
+    margin-top: 4.8rem;
+}
+
+.about-me__buttons .column:first-child {
+    padding-right: 32px;
+}
+
+.about-me__buttons .column:last-child {
+    padding-left: 32px;
+}
+
+/* -------------------------------------------------------------------
+   * ## timeline
+   * ------------------------------------------------------------------- */
+.about-experience__timeline {/*Utilizamos las posisciones mas los margenes exteriores e interiores*/
+    margin-top: 1.6rem;
+}
+
+.about-experience__timeline .column:first-child {
+    padding-right: 40px;
+}
+
+.about-experience__timeline .column:last-child {
+    padding-left: 40px;
+}
+
+.timeline {
+    padding-top: 4.8rem;
+    position: relative;
+}
+
+.timeline::before {/*Realizamos un bloque y movemos los colores, posiciones y pixeles*/
+    content: "";
+    display: block;
+    width: 1px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.12);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.timeline::after {/*Llamamos otra clase diferente un bloque y movemos los colores, posiciones y pixeles*/
+    content: "";
+    display: block;
+    width: 5.6rem;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.12);
+    position: absolute;
+    left: 1px;
+    top: 0;
+}
+
+.timeline__icon-wrap {/*Llamamos otra clase diferente un bloque y movemos los colores, posiciones y pixeles*/
+    display: block;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    position: absolute;
+    top: -2.2rem;
+    left: 5.6rem;
+}
+
+.timeline__icon {/*Llamamos otra clase diferente un bloque y movemos los colores, posiciones y pixeles
+    para luego agrgar los transform*/
+    display: block;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
+.timeline__icon--work {/*Aumentamos imagenes*/
+    background-image: url(../img/icons/icon-briefcase.svg);
+}
+
+.timeline__icon--education {
+    background-image: url(../img/icons/icon-education.svg);
+}
+
+.timeline__block {/*Jugamos con los margenes */
+    position: relative;
+    padding-left: 5.6rem;
+    padding-bottom: .8rem;
+    margin-top: 2.8rem;
+    min-height: 35.6rem;
+}
+
+.timeline .timeline__block:last-child {
+    padding-bottom: 0;
+}
+
+.timeline__bullet {/*Cambiamos los diferentes clores, pixeles, interlineado y bloque de esta clase*/
+    content: "";
+    display: block;
+    width: 3px;
+    height: 4.8rem;
+    background-color: #000000;
+    position: absolute;
+    left: -1px;
+    top: 8px;
+}
+
+.timeline__header {/*Cambiamos el interlineado*/
+    margin-bottom: 3.2rem;
+}
+
+.timeline__header .timeline__timeframe,
+.timeline__header h5 {
+    font-family: "Roboto", sans-serif;
+}
+
+.timeline__header .timeline__timeframe {/*Movemos los color junto con la medida rem*/
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.714;
+    text-transform: uppercase;
+    letter-spacing: .3rem;
+    margin-bottom: .8rem;
+    color: #000000;
+}
+
+.timeline__header h3 {/*ponemos margen a la etiqueta*/
+    margin-bottom: 0;
+}
+
+.timeline__header h5 {
+    font-size: 2.1rem;
+    font-weight: 400;
+    line-height: 1.333;
+    margin-top: 0;
+}
+
+/* ------------------------------------------------------------------- 
+   * responsive:
+   * about
+   * ------------------------------------------------------------------- */
+@media screen and (max-width:1200px) {/*Movemos el padding*/
+    .s-about {
+        padding-top: 17.2rem;
+        padding-bottom: 15.6rem;
+    }
+
+    .about-experience__timeline .column:first-child {
+        padding-right: 30px;
+    }
+
+    .about-experience__timeline .column::last-child {
+        padding-left: 30px;
+    }
+
+    .timeline::after {/*En esta clase utilizamos el width*/
+        width: 4.4rem;
+    }
+
+    .timeline__icon-wrap {/*En esta clase utilizamos el left*/
+        left: 4.4rem;
+    }
+
+    .timeline__block {
+        padding-left: 4.4rem;
+    }
+
+    .timeline__header h5 {
+        font-size: 1.8rem;
+    }
+
+}
+
+@media screen and (max-width:1024px) {/*Importamos una libreria y ponemos una columna
+    y movemos el padding segun las diferentes clases*/
+    .about-me__text {
+        column-gap: 40px;
+    }
+
+    .about-me__buttons .column:first-child {
+        padding-right: 20px;
+    }
+
+    .about-me__buttons .column:last-child {
+        padding-left: 20px;
+    }
+
+    .about-experience__timeline .column:first-child {
+        padding-right: 16px;
+    }
+
+    .about-experience__timeline .column:last-child {
+        padding-left: 16px;
+    }
+
+}
+
+@media screen and (max-width:900px) {/*Llamamos a otra clase y realiamos los cambios pertinente en cada clase*/
+    .s-about .row {
+        max-width: 700px;
+    }
+
+    .about-me__buttons .column:first-child {
+        padding-right: 16px;
+    }
+
+    .about-me__buttons .column:last-child {
+        padding-left: 16px;
+    }
+
+    .about-experience__timeline .column {
+        -webkit-flex: 0 0 100%;
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .about-experience__timeline .column:first-child {
+        margin-bottom: 9.6rem;
+    }
+
+    .timeline::after {
+        width: 5.6rem;
+    }
+
+    .timeline__icon-wrap {
+        left: 5.6rem;
+    }
+
+    .timeline__block {
+        min-height: 0;
+        padding-left: 5.6rem;
+    }
+
+}
+
+@media screen and (max-width:800px) {/*en las clases ponemos un interlineado y cantidad pixeles*/
+    .s-about {
+        padding-top: 16rem;
+    }
+
+    .s-about .row {
+        max-width: 600px;
+    }
+
+}
+
+@media screen and (max-width:600px) {/*Elegimos otra clase y modifcamos lo que tien en esta sección
+    como el padding, left, width y font size*/
+
+    .about-me__buttons .column:first-child,
+    .about-experience__timeline .column:first-child {
+        padding-right: 10px;
+    }
+
+    .about-me__buttons .column:last-child,
+    .about-experience__timeline .column:last-child {
+        padding-left: 10px;
+    }
+
+    .timeline::after {
+        width: 4.4rem;
+    }
+
+    .timeline__icon-wrap {
+        left: 4.4rem;
+    }
+
+    .timeline__block {
+        padding-left: 4.4rem;
+    }
+
+    .timeline__header h5 {
+        font-size: 1.8rem;
+    }
+
+}
+
+@media screen and (max-width:400px) {/*Terminamos aumentando una clase de about, para luego 
+    modificar el margin, padding, left, width con diferentes rem*/
+    .s-about>[class*="about-"] {
+        margin-bottom: 14rem;
+    }
+
+    .about-me__buttons .column:first-child,
+    .about-experience__timeline .column:first-child {
+        padding-right: 0;
+    }
+
+    .about-me__buttons .column:last-child,
+    .about-experience__timeline .column:last-child {
+        padding-left: 0;
+    }
+
+    .timeline::after {
+        width: 2.8rem;
+    }
+
+    .timeline__icon-wrap {
+        left: 2.8rem;
+    }
+
+    .timeline__block {
+        padding-left: 2.8rem;
+    }
+
+}
